@@ -1,8 +1,8 @@
 MySQL:
 `show databases;`
+`show tables;`
 `create database testDB;`
 `use testDB;`
-`show tables; `
 `select * from testTable limit 10;`
 
 #login
@@ -12,21 +12,22 @@ MySQL:
 `set password = password('yourpw');`
 `flush privileges;`
 
-#creat&show&midify info
+#creat&show&midify data
 `create database <yourdb>;`
 `use <yourdb>;`
 `create table <yourtb>;`
-`show databases;`
-`show tables;`
 `drop table if exists <yourtb>;`
 `rename table <yourtb> to <newtb>;`
 `alter table <yourtb> add (column) <command>;`
 `alter table <yourtb> drop <command>;`
 `alter table <yourtb> change <command>;`
+
 `update <yourtb> set <column1=''> where <column2=''>;`
 `delete from <yourtb> where <column1=''>;`
 `select*(column) from <yourtb> where <column1=''>;`
 `insert into <yourtb> (colomn1,column2) values ('a','b');`
+
+
 
 #excute multiple command in a sql file
 `touch <cmds.sql>;`
