@@ -1,7 +1,8 @@
-Linux command:
-define variable: File = "test.txt"
-flush and write to file: echo -e "content + escape " > $File 
-continue writing to file: echo -e "content + escape " >> $File
+Linux command:> 
+    define variable: `File = "test.txt"`
+    flush and write to file: `echo -e "content + escape " > $File` 
+    continue writing to file: `echo -e "content + escape " >> $File`
+
 
 
 
