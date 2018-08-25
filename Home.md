@@ -1,17 +1,14 @@
-Linux command:> 
-    define variable: `File = "test.txt"`
-    flush and write to file: `echo -e "content + escape " > $File` 
-    continue writing to file: `echo -e "content + escape " >> $File`
+Linux command:  
+    define variable: `File = "test.txt"`  
+    flush and write to file: `echo -e "content + escape " > $File`   
+    continue writing to file: `echo -e "content + escape " >> $File`  
 
-
-
-
-MySQL:
-`show databases;`
-`show tables;`
-`create database testDB;`
-`use testDB;`
-`select * from testTable limit 10;`
+MySQL: 
+`show databases;`  
+`show tables;`  
+`create database testDB;`  
+`use testDB;`  
+`select * from testTable limit 10;`  
 
 #login
 `mysql -u <username> -p`
@@ -29,7 +26,7 @@ MySQL:
 `alter table <yourtb> add (column) <command>;`
 `alter table <yourtb> drop <command>;`
 `alter table <yourtb> change <command>;`
-
+#modify table
 `update <yourtb> set <column1=''> where <column2=''>;`
 `delete from <yourtb> where <column1=''>;`
 `select*(column) from <yourtb> where <column1=''>;`
