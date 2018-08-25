@@ -1,3 +1,8 @@
+Linux command:
+
+
+
+
 MySQL:
 `show databases;`
 `show tables;`
