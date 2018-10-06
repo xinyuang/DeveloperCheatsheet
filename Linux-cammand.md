@@ -3,6 +3,6 @@ unzip file
 show current path
 `pwd`  
 set environment variables
-`sudo vi ~/.bash_profile`
+`sudo vi ~/.bash_profile`  
 update 
 `source ~/.bash_profile `
