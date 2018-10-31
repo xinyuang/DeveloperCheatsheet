@@ -1,18 +1,22 @@
-MySQL: 
+MySQL:   
 `show databases;`  
 `show tables;`  
 `create database testDB;`  
 `use testDB;`  
 `select * from testTable limit 10;`  
+`select empno,ename,sal,sal*12 from emp order by sal*12 desc;`  
+edit SQL inquiry: `ed`  
+execute last SQL inquiry: `/`  
+add alias to sal*12: `select empno,ename, deptno, sal,sal*12 annlsal from emp order by deptno, annlsal desc;`
 
-#login
+#login  
 `mysql -u <username> -p`
 
-#set new password
+#set new password  
 `set password = password('yourpw');`
 `flush privileges;`
 
-#creat&show&midify data
+#creat&show&midify data  
 `create database <yourdb>;`
 `use <yourdb>;`
 `create table <yourtb>;`
@@ -20,8 +24,8 @@ MySQL:
 `rename table <yourtb> to <newtb>;`
 `alter table <yourtb> add (column) <command>;`
 `alter table <yourtb> drop <command>;`
-`alter table <yourtb> change <command>;`
-#modify table
+`alter table <yourtb> change <command>;`  
+#modify table  
 `update <yourtb> set <column1=''> where <column2=''>;`
 `delete from <yourtb> where <column1=''>;`
 `select*(column) from <yourtb> where <column1=''>;`
@@ -29,14 +33,14 @@ MySQL:
 
 
 
-#excute multiple command in a sql file
+#excute multiple command in a sql file  
 `touch <cmds.sql>;`
 `source <cmds.sql>;`
 
-#export file using terminal
+#export file using terminal  
 `mysql -u <username> -p -e "<command;>" > <yourfile.txt>`
 
-#simple example for creating a table
+#simple example for creating a table  
 `create table db_album.Album ( 
 albumid INT NOT NULL AUTO_INCREMENT, 
 PRIMARY KEY (albumid), 
