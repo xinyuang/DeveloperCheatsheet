@@ -1,3 +1,10 @@
+Linux command:  
+    change manage right: `su root`
+    define variable: `File = "test.txt"`  
+    flush and write to file: `echo -e "content + escape " > $File`   
+    continue writing to file: `echo -e "content + escape " >> $File`  
+
+
 unzip file
 `tar -zxvf ***.tar.gz -C /save_path`  
 show current path
