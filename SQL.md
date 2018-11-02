@@ -7,8 +7,10 @@ MySQL:
 `select empno,ename,sal,sal*12 from emp order by sal*12 desc;`  
 edit SQL inquiry: `ed`  
 execute last SQL inquiry: `/`  
-add alias to sal*12: `select empno,ename, deptno, sal,sal*12 annlsal from emp order by deptno, annlsal desc;`
-
+add alias to sal*12:   
+`select empno,ename, deptno, sal,sal*12 annlsal from emp order by deptno, annlsal desc;`
+inquiry interval:  
+`select * from emp where sal between 1000 and 2000;
 #login  
 `mysql -u <username> -p`
 
