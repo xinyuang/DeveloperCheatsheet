@@ -8,7 +8,7 @@ MySQL:
 edit SQL inquiry: `ed`  
 execute last SQL inquiry: `/`  
 add alias to sal*12:   
-`select empno,ename, deptno, sal,sal*12 annlsal from emp order by deptno, annlsal desc;`
+`select empno,ename, deptno, sal,sal*12 annlsal from emp order by deptno, annlsal desc;`  
 inquiry interval:  
 `select * from emp where sal between 1000 and 2000;
 #login  
