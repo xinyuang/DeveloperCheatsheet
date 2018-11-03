@@ -13,6 +13,7 @@ Manage branch
 Edit, add and commit your files in current branch.    
 `git status`  
 `git add .`  
+`git add --all /path_to_folder`
 `git commit -m "comment"`  
 
 Merge current branch into master branch    
