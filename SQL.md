@@ -7,6 +7,7 @@ MySQL:
 `select empno,ename,sal,sal*12 from emp order by sal*12 desc;`  
 `select avg(sal) from emp;`  
 `select distinct title, deptno from emp;`  
+`select worker,deptname from emp,dept where emp.deptno=dept.deptno;`   
 edit SQL inquiry: `ed`  
 execute last SQL inquiry: `/`  
 add alias to sal*12:   
