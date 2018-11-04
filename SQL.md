@@ -8,6 +8,7 @@ MySQL:
 `select avg(sal) from emp;`  
 `select distinct title, deptno from emp;`  
 `select worker,deptname from emp,dept where emp.deptno=dept.deptno;`   
+`select b.ename, e.ename from emp b, emp e where b.empno = e.mgr;`  
 edit SQL inquiry: `ed`  
 execute last SQL inquiry: `/`  
 add alias to sal*12:   
