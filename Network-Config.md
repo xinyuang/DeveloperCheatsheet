@@ -19,7 +19,7 @@ DEVICE=ens33
 ONBOOT=yes         #set connect on boot  
 
 IPADDR=192.168.137.111  
-PREFIX=24                             #same as NETMASK=255.255.255.0  
+PREFIX=24                             #same as NETMASK=255.255.255.0  without setting IPV6_PRIVACY
 GATEWAY=192.168.137.2  
 IPV6_PRIVACY=no  
 DNS1=8.8.8.8  
