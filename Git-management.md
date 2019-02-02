@@ -1,7 +1,7 @@
 Manage git  
 `git init .`  
 `git remote add origin <your origin repo>`  
-`git remote rm origin`
+`git remote rm origin`  
 `git remote -v`  
 `git pull origin master`  
 `git log`  
