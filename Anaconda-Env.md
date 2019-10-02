@@ -16,5 +16,5 @@ conda env create -f environment.yaml
 source activate myenv  
 conda install pip  
 conda install ipykernel # or pip install ipykernel  
-source activate myenv
+source activate myenv  
 python -m ipykernel install --user --name myenv --display-name "Python (myenv)"
