@@ -58,3 +58,6 @@ username VARCHAR(20) NOT NULL,
 FOREIGN KEY (username) 
 REFERENCES User (username) 
 on delete cascade)ENGINE=InnoDB;`
+
+`set innodb_lock_wait_timeout=30;`
+`SET GLOBAL sql_mode = 'NO_ENGINE_SUBSTITUTION';`
