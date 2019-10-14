@@ -57,8 +57,10 @@ created TIMESTAMP default current_timestamp,
 username VARCHAR(20) NOT NULL,
 FOREIGN KEY (username) 
 REFERENCES User (username) 
-on delete cascade)ENGINE=InnoDB;`
+on delete cascade)ENGINE=InnoDB;`  
 
 # config mySQL
-`set innodb_lock_wait_timeout=30;`
-`SET GLOBAL sql_mode = 'NO_ENGINE_SUBSTITUTION';`
+`set innodb_lock_wait_timeout=30;`  
+`SET GLOBAL sql_mode = 'NO_ENGINE_SUBSTITUTION';`  
+`SET FOREIGN_KEY_CHECKS=0;`  
+`show processlist;`
