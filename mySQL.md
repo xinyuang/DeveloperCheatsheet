@@ -3,18 +3,7 @@ MySQL:
 `show tables;`  
 `create database testDB;`  
 `use testDB;`  
-`select * from testTable limit 10;`  
-`select empno,ename,sal,sal*12 from emp order by sal*12 desc;`  
-`select avg(sal) from emp;`  
-`select distinct title, deptno from emp;`  
-`select worker,deptname from emp,dept where emp.deptno=dept.deptno;`   
-`select b.ename, e.ename from emp b, emp e where b.empno = e.mgr;`  
-edit SQL inquiry: `ed`  
-execute last SQL inquiry: `/`  
-add alias to sal*12:   
-`select empno,ename, deptno, sal,sal*12 annlsal from emp order by deptno, annlsal desc;`  
-inquiry interval:  
-`select * from emp where sal between 1000 and 2000;`
+
   
 #login  
 `mysql -u <username> -p`
@@ -64,3 +53,18 @@ on delete cascade)ENGINE=InnoDB;`
 `SET GLOBAL sql_mode = 'NO_ENGINE_SUBSTITUTION';`  
 `SET FOREIGN_KEY_CHECKS=0;`  
 `show processlist;`
+
+# query mySQL  
+`select sum(Totaltime) as ttl_time,avg(speed) as spd from demo_table where name like '%tom%';`  
+`select * from testTable limit 10;`  
+`select empno,ename,sal,sal*12 from emp order by sal*12 desc;`  
+`select avg(sal) from emp;`  
+`select distinct title, deptno from emp;`  
+`select worker,deptname from emp,dept where emp.deptno=dept.deptno;`   
+`select b.ename, e.ename from emp b, emp e where b.empno = e.mgr;`  
+edit SQL inquiry: `ed`  
+execute last SQL inquiry: `/`  
+add alias to sal*12:   
+`select empno,ename, deptno, sal,sal*12 annlsal from emp order by deptno, annlsal desc;`  
+inquiry interval:  
+`select * from emp where sal between 1000 and 2000;`
