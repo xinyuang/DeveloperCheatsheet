@@ -67,5 +67,6 @@ execute last SQL inquiry: `/`
 add alias to sal*12:   
 `select empno,ename, deptno, sal,sal*12 annlsal from emp order by deptno, annlsal desc;`  
 inquiry interval:  
-`select * from emp where sal between 1000 and 2000;`
-`SELECT users.name AS user, products.name AS favorite FROM users INNER JOIN products ON users.fav = products.id`
+`select * from emp where sal between 1000 and 2000;`  
+`SELECT users.name AS user, products.name AS favorite FROM users INNER JOIN products ON users.fav = products.id`  
+`UPDATE customers SET address = %s WHERE address = %s`
