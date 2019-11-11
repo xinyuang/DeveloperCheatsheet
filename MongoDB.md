@@ -13,3 +13,5 @@ https://docs.mongodb.com/manual/installation/
              { role: "read", db: "reporting" } ]  
   }  
 )`  
+
+`mongo --port 27017 -u "myTester" --authenticationDatabase "test" -p`  
