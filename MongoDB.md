@@ -20,6 +20,6 @@ https://docs.mongodb.com/manual/installation/
 `use newDB`  
 
 `db.collect1.insertOne( { x: 1 } );`  
-show collections;
+`show collections;`  
 
 `db.getCollection('collect1').find()`  
