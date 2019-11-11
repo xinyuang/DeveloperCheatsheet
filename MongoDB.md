@@ -15,3 +15,9 @@ https://docs.mongodb.com/manual/installation/
 )`  
 
 `mongo --port 27017 -u "myTester" --authenticationDatabase "test" -p`  
+`show dbs`  
+
+`use newDB`  
+`db.newDB.insertOne( { x: 1 } );`  
+
+`db.getCollection('newDB').find()`  
