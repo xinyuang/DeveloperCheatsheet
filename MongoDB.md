@@ -1,4 +1,4 @@
-https://docs.mongodb.com/manual/installation/
+https://docs.mongodb.com/manual/installation/  
 `sudo systemctl enable mongod`  
 `sudo service mongod start`  
 
@@ -18,6 +18,8 @@ https://docs.mongodb.com/manual/installation/
 `show dbs`  
 
 `use newDB`  
-`db.newDB.insertOne( { x: 1 } );`  
 
-`db.getCollection('newDB').find()`  
+`db.collect1.insertOne( { x: 1 } );`  
+show collections;
+
+`db.getCollection('collect1').find()`  
