@@ -1,2 +1,3 @@
 `keys '*'`  
 `del key`  
+`save`  
