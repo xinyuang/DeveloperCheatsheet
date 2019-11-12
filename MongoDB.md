@@ -26,3 +26,10 @@ https://docs.mongodb.com/manual/tutorial/
 `db.collect1.insertOne( { _id: '001', x: 1 } );`  
 `show collections;`  
 `db.getCollection('collect1').find({"_id": '001'})`  
+
+# geospatial data
+`location: {
+      type: "Point",
+      coordinates: [-73.856077, 40.848447]
+}`  
+`db.collection.createIndex( { <location field> : "2dsphere" } )`  
