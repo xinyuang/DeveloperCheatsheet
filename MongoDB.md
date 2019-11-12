@@ -28,6 +28,7 @@ https://docs.mongodb.com/manual/tutorial/
 `show collections;`  
 `db.getCollection('collect1').find({"_id": '001'})`  
 ` db.collection.update()`  
+`db.trips.count()`  
 
 # geospatial data
 `location: {
