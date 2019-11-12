@@ -23,7 +23,6 @@ https://docs.mongodb.com/manual/tutorial/
 `mongo --port 27017 -u "myTester" --authenticationDatabase "test" -p`  
 
 # manage tables
-`db.collect1.insertOne( { x: 1 } );`  
+`db.collect1.insertOne( { _id: '001', x: 1 } );`  
 `show collections;`  
-
-`db.getCollection('collect1').find()`  
+`db.getCollection('collect1').find({"_id": '001'})`  
