@@ -26,6 +26,7 @@ https://docs.mongodb.com/manual/tutorial/
 `db.collect1.insertOne( { _id: '001', x: 1 } );`  
 `show collections;`  
 `db.getCollection('collect1').find({"_id": '001'})`  
+` db.collection.update()`  
 
 # geospatial data
 `location: {
