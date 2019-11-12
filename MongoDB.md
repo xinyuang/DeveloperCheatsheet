@@ -5,7 +5,12 @@ https://docs.mongodb.com/manual/tutorial/
 
 `mongod`  
 
+# manage database:
+`show dbs`  
 `use test`  
+`delete test`  
+
+# manage user
 `db.createUser(  
   {  
     user: "myTester",  
@@ -16,10 +21,8 @@ https://docs.mongodb.com/manual/tutorial/
 )`  
 
 `mongo --port 27017 -u "myTester" --authenticationDatabase "test" -p`  
-`show dbs`  
 
-`use newDB`  
-
+# manage tables
 `db.collect1.insertOne( { x: 1 } );`  
 `show collections;`  
 
