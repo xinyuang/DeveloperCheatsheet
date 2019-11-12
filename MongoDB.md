@@ -1,4 +1,5 @@
 https://docs.mongodb.com/manual/installation/  
+https://docs.mongodb.com/manual/tutorial/
 `sudo systemctl enable mongod`  
 `sudo service mongod start`  
 
