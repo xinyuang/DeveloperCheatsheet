@@ -69,4 +69,14 @@ add alias to sal*12:
 inquiry interval:  
 `select * from emp where sal between 1000 and 2000;`  
 `SELECT users.name AS user, products.name AS favorite FROM users INNER JOIN products ON users.fav = products.id`  
-`UPDATE customers SET address = %s WHERE address = %s`
+`UPDATE customers SET address = %s WHERE address = %s`  
+`  
+select *  
+from  
+    tableA a  
+        inner join  
+    tableB b  
+        on a.common = b.common  
+        inner join   
+    TableC c  
+        on b.common = c.common`  
