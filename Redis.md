@@ -8,6 +8,7 @@ https://redis.io/commands
 
 For sorted set  
 `zrange 'key'  start_idx end_idx`  
+`zcard 'key'`  count the number of member  
 
 
 `GEOADD Sicily 13.361389 38.115556 "Palermo" 15.087269`  
