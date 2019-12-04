@@ -13,15 +13,15 @@ MySQL:
 `flush privileges;`
 
 #creat&show&midify data  
-`create database <yourdb>;`
-`use <yourdb>;`
-`create table <yourtb>;`
-`drop table if exists <yourtb>;`
-`rename table <yourtb> to <newtb>;`
-`alter table <yourtb> add (column) <command>;`
-`alter table <yourtb> drop <command>;`
+`create database <yourdb>;`  
+`use <yourdb>;`  
+`create table <yourtb>;`  
+`drop table if exists <yourtb>;`  
+`rename table <yourtb> to <newtb>;`  
+`alter table <yourtb> add column <command>;`  
+`alter table <yourtb> drop <command>;`  
 `alter table <yourtb> change <command>;`  
-`ALTER TABLE <yourtb> ALTER (column) SET DEFAULT 0;`  
+`ALTER TABLE <yourtb> ALTER COLUMN <yourcolumn> SET DEFAULT 0;`  
 
 #modify table  
 `update <yourtb> set <column1=''> where <column2=''>;`
