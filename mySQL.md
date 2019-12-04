@@ -24,19 +24,19 @@ MySQL:
 `ALTER TABLE <yourtb> ALTER COLUMN <yourcolumn> SET DEFAULT 0;`  
 
 #modify table  
-`update <yourtb> set <column1=''> where <column2=''>;`
-`delete from <yourtb> where <column1=''>;`
-`select*(column) from <yourtb> where <column1=''>;`
-`insert into <yourtb> (colomn1,column2) values ('a','b');`
+`update <yourtb> set <column1=''> where <column2=''>;`  
+`delete from <yourtb> where <column1=''>;`  
+`select*(column) from <yourtb> where <column1=''>;`  
+`insert into <yourtb> (colomn1,column2) values ('a','b');`  
 
 
 
 #excute multiple command in a sql file  
-`touch <cmds.sql>;`
-`source <cmds.sql>;`
+`touch <cmds.sql>;`  
+`source <cmds.sql>;`  
 
 #export file using terminal  
-`mysql -u <username> -p -e "<command;>" > <yourfile.txt>`
+`mysql -u <username> -p -e "<command;>" > <yourfile.txt>`  
 
 #simple example for creating a table  
 `create table db_album.Album ( 
