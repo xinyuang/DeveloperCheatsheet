@@ -21,6 +21,8 @@ MySQL:
 `alter table <yourtb> add (column) <command>;`
 `alter table <yourtb> drop <command>;`
 `alter table <yourtb> change <command>;`  
+`ALTER TABLE <yourtb> ALTER (column) SET DEFAULT 0;`  
+
 #modify table  
 `update <yourtb> set <column1=''> where <column2=''>;`
 `delete from <yourtb> where <column1=''>;`
