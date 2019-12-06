@@ -27,6 +27,7 @@ https://docs.mongodb.com/manual/tutorial/
 `db.collect1.insertOne( { _id: '001', x: 1 } );`  
 `show collections;`  
 `db.getCollection('collect1').find({"_id": '001'})`  
+`db.posts.find({'day':{'$gt':'2019-11-30'}}`  
 ` db.collection.update()`  
 `db.trips.count()`  
 
