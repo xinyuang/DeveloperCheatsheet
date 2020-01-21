@@ -16,3 +16,6 @@ update
 
 Free Up
 `sudo apt-get -s clean`  
+
+LVM for multiple hard drives
+https://askubuntu.com/questions/7002/how-to-set-up-multiple-hard-drives-as-one-volume
