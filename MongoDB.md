@@ -20,6 +20,16 @@ https://docs.mongodb.com/manual/tutorial/
   }  
 )`  
 
+from pymongo import MongoClient
+
+# client = MongoClient('localhost', 27017)
+client = MongoClient('localhost',
+                 username='test',
+                 password='test***',
+                 authSource='posts',
+                 authMechanism='SCRAM-SHA-256')
+db = client['posts'] # db name
+
 `mongo --port 27017 -u "myTester" --authenticationDatabase "test" -p`  
 
 # manage docs
@@ -31,6 +41,11 @@ https://docs.mongodb.com/manual/tutorial/
 `db.posts.find({'day':{'$gt':'2019-11-30'}}`  
 `db.posts.find({}, { "_id":1})`  // only "_id" field is returned 
 `db.posts.find({}, { "_id":0})`  // only "_id" field is excluded 
+`db.trips.find({"_id": {'$regex': "3F003"},
+                                      "day": {
+                                        '$gte': start_date,
+                                        '$lt': end_date
+                                      }})`  
 `db.posts.findOne({})`  
 `db.posts.remove({'_id':'test'});`  
 ` db.collection.update()`  
