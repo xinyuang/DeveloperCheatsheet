@@ -23,12 +23,13 @@ https://docs.mongodb.com/manual/tutorial/
 `mongo --port 27017 -u "myTester" --authenticationDatabase "test" -p`  
 
 # manage docs
-`db.list_collection_names()`
+`db.list_collection_names()`  
 `db.profiles.drop()`  
 `db.collect1.insertOne( { _id: '001', x: 1 } );`  
 `show collections;`  
 `db.getCollection('collect1').find({"_id": '001'})`  
 `db.posts.find({'day':{'$gt':'2019-11-30'}}`  
+`db.posts.find({}, { "_id":1})`  // only "_id" field is returned  
 `db.posts.findOne({})`  
 `db.posts.remove({'_id':'test'});`  
 ` db.collection.update()`  
