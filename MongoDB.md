@@ -23,16 +23,17 @@ https://docs.mongodb.com/manual/tutorial/
 from pymongo import MongoClient
 
 # client = MongoClient('localhost', 27017)
-client = MongoClient('localhost',
-                 username='test',
-                 password='test***',
-                 authSource='posts',
-                 authMechanism='SCRAM-SHA-256')
+
 db = client['posts'] # db name
 
 `mongo --port 27017 -u "myTester" --authenticationDatabase "test" -p`  
 
 # manage docs
+`client = MongoClient('localhost',
+                 username='test',
+                 password='test***',
+                 authSource='posts',
+                 authMechanism='SCRAM-SHA-256')`  
 `db.list_collection_names()`  
 `db.profiles.drop()`  
 `db.collect1.insertOne( { _id: '001', x: 1 } );`  
