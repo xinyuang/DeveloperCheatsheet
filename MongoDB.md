@@ -58,3 +58,8 @@ db = client['posts'] # db name
       coordinates: [-73.856077, 40.848447]
 }`  
 `db.collection.createIndex( { <location field> : "2dsphere" } )`  
+
+# backup and restore
+`mongodump --collection=myCollection --db=test`  
+`mongodump --host=mongodb1.example.net --port=3017 --username=user --password="pass" --out=/opt/backup/mongodump-2013-10-24`  
+`mongorestore --host=mongodb1.example.net --port=3017 --username=user  --authenticationDatabase=admin /opt/backup/mongodump-2013-10-24`  
