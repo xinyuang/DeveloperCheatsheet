@@ -3,6 +3,7 @@ https://redis.io/commands
 
 `sudo systemctl enable redis-server.service`  
 `sudo systemctl restart redis-server.service`  
+`config get dir `  
 
 `keys '*'`  
 `del key`  
