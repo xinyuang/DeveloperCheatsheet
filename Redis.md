@@ -1,7 +1,8 @@
 https://redis-py.readthedocs.io/en/latest/  
 https://redis.io/commands  
 
-`sudo systemctl enable redis-server.service`
+`sudo systemctl enable redis-server.service`  
+`sudo systemctl restart redis-server.service`  
 
 `keys '*'`  
 `del key`  
