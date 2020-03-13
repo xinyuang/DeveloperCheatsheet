@@ -1,4 +1,5 @@
 https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-redis-on-ubuntu-16-04
+https://community.pivotal.io/s/article/How-to-Backup-and-Restore-Open-Source-Redis
 https://redis-py.readthedocs.io/en/latest/  
 https://redis.io/commands  
 
