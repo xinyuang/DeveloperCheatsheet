@@ -2,6 +2,7 @@ https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-re
 https://redis-py.readthedocs.io/en/latest/  
 https://redis.io/commands  
 
+`config set requirepass p@ss$12E45`  
 `sudo systemctl enable redis-server.service`  
 `sudo systemctl restart redis-server.service`  
 `config get dir `  
