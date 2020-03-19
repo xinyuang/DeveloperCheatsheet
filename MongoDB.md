@@ -59,6 +59,7 @@ db = client['posts'] # db name
 }`  
 `db.collection.createIndex( { <location field> : "2dsphere" } )`  
 
+
 `
     mongo_db.example.aggregate([
         {
@@ -83,6 +84,7 @@ db = client['posts'] # db name
         {"$project": {"_id": 1, 'moving_avg_mpg': 1, "ttl_distance": 1, "ttl_fuel_used": 1}}
     ]))
 `  
+
 
 # backup and restore
 `mongodump --collection=myCollection --db=test`  
