@@ -72,7 +72,6 @@ db = client['posts'] # db name
                 }
 
         },
-
         {
             "$group": {
                 '_id': 'null',
@@ -81,7 +80,6 @@ db = client['posts'] # db name
                 "ttl_fuel_used": {"$sum": '$ttl_fuel_used'}
             }
         },
-
         {"$project": {"_id": 1, 'moving_avg_mpg': 1, "ttl_distance": 1, "ttl_fuel_used": 1}}
     ]))`  
 
