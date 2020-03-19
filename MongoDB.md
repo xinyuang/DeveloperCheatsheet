@@ -59,6 +59,32 @@ db = client['posts'] # db name
 }`  
 `db.collection.createIndex( { <location field> : "2dsphere" } )`  
 
+`mongo_db.example.aggregate([
+        {
+            "$match":
+                {"$and":
+                    [
+                        {"cur_mode": "manual"},
+                        {"_id": {'$regex': regex}},
+                        {"moving_avg_speed": {"$gt": speed_lower*1.60934, "$lt": speed_upper*1.60934}},
+                        {"moving_avg_mpg": {"$gt": 2}}
+                    ]
+                }
+
+        },
+
+        {
+            "$group": {
+                '_id': 'null',
+                'moving_avg_mpg': {'$avg': '$moving_avg_mpg'},
+                "ttl_distance": {"$sum": '$ttl_distance'},
+                "ttl_fuel_used": {"$sum": '$ttl_fuel_used'}
+            }
+        },
+
+        {"$project": {"_id": 1, 'moving_avg_mpg': 1, "ttl_distance": 1, "ttl_fuel_used": 1}}
+    ]))`  
+
 # backup and restore
 `mongodump --collection=myCollection --db=test`  
 `mongodump --host=mongodb1.example.net --port=3017 --username=user --password="pass" --out=/opt/backup/mongodump-2013-10-24`  
