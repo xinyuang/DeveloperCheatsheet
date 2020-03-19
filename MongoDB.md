@@ -68,10 +68,9 @@ db = client['posts'] # db name
                         {"cur_mode": "manual"},
                         {"_id": {'$regex': regex}},
                         {"moving_avg_speed": {"$gt": speed_lower*1.60934, "$lt": speed_upper*1.60934}},
-                        {"moving_avg_mpg": {"$gt": 2}}
+                        {"moving_avg_mpg": {"$gt": 2}},
                     ]
                 }
-
         },
         {
             "$group": {
