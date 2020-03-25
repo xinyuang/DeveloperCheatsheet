@@ -11,7 +11,7 @@ MySQL:
 `USE testDB`  
 Once you are logged in to mysql, grant privileges to the user test (remember to change password)  
 
-GRANT ALL privileges on testDB.* to test@localhost identified by 'mypass';
+`GRANT ALL privileges on testDB.* to test@localhost identified by 'mypass';`  
  
 #login  
 `mysql -u <username> -p`
