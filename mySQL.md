@@ -4,7 +4,15 @@ MySQL:
 `create database testDB;`  
 `use testDB;`  
 
-  
+`CREATE DATABASE testDB`  
+
+`CREATE USER 'test'@'localhost' IDENTIFIED BY 'mypass';`  
+
+`USE testDB`  
+Once you are logged in to mysql, grant privileges to the user test (remember to change password)  
+
+GRANT ALL privileges on testDB.* to test@localhost identified by 'mypass';
+ 
 #login  
 `mysql -u <username> -p`
 
