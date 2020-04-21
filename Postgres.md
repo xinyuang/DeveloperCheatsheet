@@ -10,5 +10,5 @@
 `createdb my_db`
 `psql -d my_db`
 
-`\list`
-'\conninfo`
+`\list`  
+`\conninfo`
