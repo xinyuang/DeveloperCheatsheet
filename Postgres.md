@@ -34,3 +34,14 @@ INSERT INTO playground (type, color, location, install_date) VALUES ('swing', 'y
 DELETE FROM playground WHERE type = 'slide';
 SELECT * FROM playground;
 ```
+
+4. modify table
+```SQL
+ALTER TABLE playground ADD last_maint date;
+ALTER TABLE playground DROP last_maint;
+```
+
+5. update table
+```SQL
+UPDATE playground SET color = 'red' WHERE type = 'swing';
+```
