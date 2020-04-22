@@ -13,7 +13,8 @@
 `\list`  
 `\conninfo`
 
-# table
+# table  
+1. create table
 ```SQL
 CREATE TABLE playground (
     equip_id serial PRIMARY KEY,
@@ -22,4 +23,9 @@ CREATE TABLE playground (
     location varchar(25) check (location in ('north', 'south', 'west', 'east', 'northeast', 'southeast', 'southwest', 'northwest')),
     install_date date
 );
+```
+2. table insert
+```SQL
+INSERT INTO playground (type, color, location, install_date) VALUES ('slide', 'blue', 'south', '2014-04-28');
+INSERT INTO playground (type, color, location, install_date) VALUES ('swing', 'yellow', 'northwest', '2010-08-16');
 ```
