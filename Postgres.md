@@ -49,5 +49,5 @@ UPDATE playground SET color = 'red' WHERE type = 'swing';
 #Backup and restore
 ```SQL
 pg_dump my_db > test.dump
-psql -d xinyu_db -f test_pg.dump
+psql -d my_db -f test.dump
 ```
