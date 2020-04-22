@@ -45,3 +45,9 @@ ALTER TABLE playground DROP last_maint;
 ```SQL
 UPDATE playground SET color = 'red' WHERE type = 'swing';
 ```
+
+#Backup and restore
+```SQL
+pg_dump my_db > test.dump
+psql -d xinyu_db -f test_pg.dump
+```
