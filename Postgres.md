@@ -29,3 +29,8 @@ CREATE TABLE playground (
 INSERT INTO playground (type, color, location, install_date) VALUES ('slide', 'blue', 'south', '2014-04-28');
 INSERT INTO playground (type, color, location, install_date) VALUES ('swing', 'yellow', 'northwest', '2010-08-16');
 ```
+3. query table
+```SQL
+DELETE FROM playground WHERE type = 'slide';
+SELECT * FROM playground;
+```
