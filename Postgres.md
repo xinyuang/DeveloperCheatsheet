@@ -52,7 +52,7 @@ pg_dump my_db > test.dump
 psql -d my_db -f test.dump
 ```
 
-#PostGIS
+#PostGIS  
 find closest point in a line
 ```SQL
 SELECT ST_AsText(ST_ClosestPoint(pt,line)) AS cp_pt_line,
@@ -64,3 +64,9 @@ FROM (SELECT 'POINT(100 100)'::geometry As pt,
 |   cp_pt_line   |                cp_line_pt                  |
 |----------------|------------------------------------------  |
 | POINT(100 100) | POINT(73.0769230769231 115.384615384615)`  |
+
+-- Mark a point as WGS 84 long lat --
+```SQL
+SELECT ST_SetSRID(ST_Point(-123.365556, 48.428611),4326) As wgs84long_lat;
+```
+`SRID=4326;POINT(-123.365556 48.428611)`
