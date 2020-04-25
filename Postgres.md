@@ -61,11 +61,9 @@ FROM (SELECT 'POINT(100 100)'::geometry As pt,
 		'LINESTRING (20 80, 98 190, 110 180, 50 75 )'::geometry As line
 	) As foo;
 ```
-`
 |   cp_pt_line   |                cp_line_pt                  |
 |----------------|------------------------------------------  |
 | POINT(100 100) | POINT(73.0769230769231 115.384615384615)`  |
-`
 
 -- Mark a point as WGS 84 long lat --
 ```SQL
