@@ -51,3 +51,15 @@ UPDATE playground SET color = 'red' WHERE type = 'swing';
 pg_dump my_db > test.dump
 psql -d my_db -f test.dump
 ```
+
+#PostGIS
+```SQL
+SELECT ST_AsText(ST_ClosestPoint(pt,line)) AS cp_pt_line,
+	ST_AsText(ST_ClosestPoint(line,pt)) As cp_line_pt
+FROM (SELECT 'POINT(100 100)'::geometry As pt,
+		'LINESTRING (20 80, 98 190, 110 180, 50 75 )'::geometry As line
+	) As foo;
+```
+`   cp_pt_line   |                cp_line_pt
+----------------+------------------------------------------
+ POINT(100 100) | POINT(73.0769230769231 115.384615384615)`
