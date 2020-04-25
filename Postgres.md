@@ -46,13 +46,13 @@ ALTER TABLE playground DROP last_maint;
 UPDATE playground SET color = 'red' WHERE type = 'swing';
 ```
 
-#Backup and restore
+# Backup and restore
 ```SQL
 pg_dump my_db > test.dump
 psql -d my_db -f test.dump
 ```
 
-#PostGIS  
+# PostGIS  
 find closest point in a line
 ```SQL
 SELECT ST_AsText(ST_ClosestPoint(pt,line)) AS cp_pt_line,
@@ -75,3 +75,14 @@ SELECT ST_SetSRID(ST_Point(-123.365556, 48.428611),4326) As wgs84long_lat;
 ALTER TABLE sometable ADD COLUMN geog geography(POINT,4326);
 UPDATE sometable SET geog = ST_GeogFromText('SRID=4326;POINT(' || lon || ' ' || lat || ')');
 ```
+
+Geometry example - units in planar degrees 4326 is WGS 84 long lat, units are degrees.
+```SQL
+SELECT ST_Distance(
+		'SRID=4326;POINT(-72.1235 42.3521)'::geometry,
+		'SRID=4326;LINESTRING(-72.1260 42.45, -72.123 42.1546)'::geometry
+	);
+```
+`st_distance
+-----------------
+0.00150567726382282`
