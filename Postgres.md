@@ -83,10 +83,11 @@ SELECT ST_Distance(
 		'SRID=4326;LINESTRING(-72.1260 42.45, -72.123 42.1546)'::geometry
 	);
 ```
-st_distance  0.00150567726382282
+`st_distance  0.00150567726382282`
 
 find closest point on a line to a point or other geometry
 ```SQL
  SELECT ST_AsText(ST_LineInterpolatePoint(foo.the_line, ST_LineLocatePoint(foo.the_line, ST_GeomFromText('POINT(4 3)'))))
 FROM (SELECT ST_GeomFromText('LINESTRING(1 2, 4 5, 6 7)') As the_line) As foo;
 ```
+`   st_astext POINT(3 4)`
