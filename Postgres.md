@@ -70,3 +70,8 @@ FROM (SELECT 'POINT(100 100)'::geometry As pt,
 SELECT ST_SetSRID(ST_Point(-123.365556, 48.428611),4326) As wgs84long_lat;
 ```
 `SRID=4326;POINT(-123.365556 48.428611)`
+--- converting lon lat coords to geography
+```SQL
+ALTER TABLE sometable ADD COLUMN geog geography(POINT,4326);
+UPDATE sometable SET geog = ST_GeogFromText('SRID=4326;POINT(' || lon || ' ' || lat || ')');
+```
