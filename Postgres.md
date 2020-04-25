@@ -53,6 +53,7 @@ psql -d my_db -f test.dump
 ```
 
 #PostGIS
+find closest point in a line
 ```SQL
 SELECT ST_AsText(ST_ClosestPoint(pt,line)) AS cp_pt_line,
 	ST_AsText(ST_ClosestPoint(line,pt)) As cp_line_pt
