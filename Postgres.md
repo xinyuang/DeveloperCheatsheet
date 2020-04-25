@@ -83,6 +83,8 @@ SELECT ST_Distance(
 		'SRID=4326;LINESTRING(-72.1260 42.45, -72.123 42.1546)'::geometry
 	);
 ```
-`st_distance
+`
+st_distance
 -----------------
-0.00150567726382282`
+0.00150567726382282
+`
