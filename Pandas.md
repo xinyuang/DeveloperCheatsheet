@@ -6,5 +6,5 @@ cur_data = {}
 for row in row_data:
     rows.append(row.copy())
 df = pd.DataFrame(rows)   
-df.to_csv("out.csv")
+df.to_csv("out.csv",index=False)
 ```
