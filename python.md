@@ -167,15 +167,107 @@ print(dev_1.pay)
 * We generally use class method to create factory methods. Factory methods return class object \( similar to a constructor \) for different use cases.
 * We generally use static methods to create utility functions.
 
+## Inheritance
 
-
-```bash
+```python
 class Developer(Employee):
     raise_amt = 1.10
 
     def __init__(self,first, last, pay):
         super().__init__(first, last, pay)
+        
+class Developer2(Employee):
+  raise_amt = 1.30
+  
+  def __init__(self, first, last, pay):
+    Employee.__init__(self, first, last, pay)
 ```
 
+## Iterators
 
+```python
+class MyNumbers:
+  def __iter__(self):
+    self.a = 1
+    return self
+
+  def __next__(self):
+    if self.a <= 20:
+      x = self.a
+      self.a += 1
+      return x
+    else:
+      raise StopIteration
+
+myclass = MyNumbers()
+myiter = iter(myclass)
+
+for x in myiter:
+  print(x)
+```
+
+## Multi-threading
+
+```python
+from Queue import Queue
+from threading import Thread
+
+
+class Worker(Thread):
+    """Thread executing tasks from a given tasks queue"""
+    def __init__(self, tasks):
+        Thread.__init__(self)
+        self.tasks = tasks
+        self.daemon = True
+        self.start()
+
+    def run(self):
+        while True:
+            func, args, kargs = self.tasks.get()
+            try:
+                func(*args, **kargs)
+            except Exception, e:
+                print e
+            finally:
+                self.tasks.task_done()
+
+
+class ThreadPool:
+    """Pool of threads consuming tasks from a queue"""
+    def __init__(self, num_threads):
+        self.tasks = Queue(num_threads)
+        for _ in range(num_threads):
+            Worker(self.tasks)
+
+    def add_task(self, func, *args, **kargs):
+        """Add a task to the queue"""
+        self.tasks.put((func, args, kargs))
+
+    def wait_completion(self):
+        """Wait for completion of all the tasks in the queue"""
+        self.tasks.join()
+
+if __name__ == '__main__':
+    from random import randrange
+    from time import sleep
+
+    delays = [randrange(1, 10) for i in range(100)]
+
+    def wait_delay(d):
+        print 'sleeping for (%d)sec' % d
+        sleep(d)
+
+    pool = ThreadPool(20)
+
+    #  either -----------
+    for i, d in enumerate(delays):
+        pool.add_task(wait_delay, d)
+    #  or ---------------
+    pool.map(wait_delay,delays)
+    #  -------------------------
+
+    pool.wait_completion()
+```
+
+##  
 
