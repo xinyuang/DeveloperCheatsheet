@@ -408,3 +408,17 @@ new_box2 = copy.deepcopy(box)
 print(new_box2.corner is box.corner)  # False
 ```
 
+## Functions
+
+**Pure function** does not modify any of the objects passed to it as arguments and it has no effect, like displaying a value or getting user input, other than returning a value.
+
+**Modifiers** modify the objects it gets as parameters.
+
+There is some evidence that programs that use pure functions are faster to develop and less error-prone than programs that use modifiers.
+
+In general, I recommend that you write pure functions whenever it is reasonable and resort to modifiers only if there is a compelling advantage. This approach might be called a **functional programming style**.
+
+```python
+assert valid_time(t1) and valid_time(t2)
+```
+
