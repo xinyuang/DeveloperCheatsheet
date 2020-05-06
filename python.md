@@ -7,7 +7,7 @@
 DATABASE="my_db"
 
 # app.py
-from detenv import load_dotenv
+from dotenv import load_dotenv
 import os
 load_detenv()
 database = os.getenv('DATABASE')
