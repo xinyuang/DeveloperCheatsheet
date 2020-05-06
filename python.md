@@ -273,5 +273,44 @@ if __name__ == '__main__':
     pool.wait_completion()
 ```
 
+## Multi-processing
+
+```python
+from multiprocessing import Pool
+from time import sleep
+
+def f(x):
+    return x*x
+
+if __name__ == '__main__':
+    # start 4 worker processes
+    with Pool(processes=4) as pool:
+
+        print "[0, 1, 4,..., 81]"
+        print(pool.map(f, range(10)))
+
+        # print same numbers in arbitrary order
+        for i in pool.imap_unordered(f, range(10)):
+            print(i)
+```
+
+```python
+from multiprocessing import Process, Lock,Value
+
+def func(l, i):
+    l.acquire()
+    try:
+        ticket.value = ticket.value + 1
+        print('hello world', ticket.value)
+    finally:
+        l.release()
+
+if __name__ == '__main__':
+    lock = Lock()
+    ticket = Value('d', 0.0)
+    for num in range(10):
+        Process(target=func, args=(lock, ticket)).start()
+```
+
 ##  
 
