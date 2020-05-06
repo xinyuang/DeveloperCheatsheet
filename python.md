@@ -312,5 +312,99 @@ if __name__ == '__main__':
         Process(target=func, args=(lock, ticket)).start()
 ```
 
-##  
+## Files
+
+```python
+fout = open('output.txt', 'w')
+count = 0
+with open("flags.py",'r') as fp:  
+    line = fp.readline()        
+    while line:
+        try:
+            line = fp.readline()
+            fout.write(line)
+            count += 1
+            fout.write('In %d years I have spotted %g %s.\n' % (3, count, 'camels'))
+        except Exception as e:
+            print(e)
+fout.close()
+
+#  string bytes key value only
+import dbm
+db = dbm.open('captions', 'c')
+db['cleese.png'] = 'Photo of John Cleese.'
+print(db['cleese.png'])
+
+
+import pickle
+t1 = [1, 2, 3]
+s = pickle.dumps(t1)
+t2 = pickle.loads(s)
+
+pickle_out = open("myDB.pickle","wb")
+pickle.dump(my_content, pickle_out)
+pickle_out.close()
+
+pickle_in = open("myDB.pickle","rb")
+file_data = pickle.load(pickle_in)
+
+import pandas as pd
+df = pd.read_csv("mydata.csv")
+print(df.columns)
+
+import json
+with open('mydata.json','r') as f:
+    res = json.load(f)
+```
+
+## Pipes
+
+```python
+import os
+file_name = "output.txt"
+cmd = "md5sum " + file_name
+fp = os.popen(cmd)
+res = fp.read()
+stat = fp.close()
+print(res)
+print(stat)
+```
+
+##  Copying
+
+Shallow copy copies the object and any references it contains, but not the embedded objects.
+
+Deep copy copies not only the object but also the objects it refers to, and the objects _they_ refer to, and so on.
+
+```python
+class Point:
+    """Represents a point in 2-D space.
+
+    attributes: x, y
+    """
+
+
+class Rectangle:
+    """Represents a rectangle. 
+
+    attributes: width, height, corner.
+    """
+    
+box = Rectangle()
+box.width = 100.0
+box.height = 200.0
+box.corner = Point()
+box.corner.x = 50.0
+box.corner.y = 50.0
+
+import copy
+
+# shallow copy
+new_box = copy.copy(box)
+print(new_box.corner is box.corner)  # True
+
+# deep copy
+new_box2 = copy.deepcopy(box)
+print(new_box2.corner is box.corner)  # False
+```
 
