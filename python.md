@@ -238,7 +238,12 @@ class ThreadPool:
         self.tasks = Queue(num_threads)
         for _ in range(num_threads):
             Worker(self.tasks)
-
+            
+    def map(self, func, args_list):
+        """ Add a list of tasks to the queue """
+        for args in args_list:
+            self.add_task(func, args)
+            
     def add_task(self, func, *args, **kargs):
         """Add a task to the queue"""
         self.tasks.put((func, args, kargs))
