@@ -16,6 +16,16 @@ sudo -i -u postgres createdb my_db psql -d my_db
 \conninfo
 ```
 
+## Database
+
+```sql
+CREATE DATABASE my_db
+WITH 
+OWNER = postgres
+ENCODING = 'UTF8'
+CONNECTION LIMIT = -1;
+```
+
 ## table
 
 1. create table
@@ -49,6 +59,7 @@ sudo -i -u postgres createdb my_db psql -d my_db
    ```sql
    ALTER TABLE playground ADD last_maint date;
    ALTER TABLE playground DROP last_maint;
+   ALTER TABLE locations ADD COLUMN geom geometry(PointZ,4326);
    ```
 
 5. update table
@@ -66,6 +77,10 @@ psql -d my_db -f test.dump
 
 ## PostGIS
 
+```sql
+CREATE EXTENSION postgis;
+```
+
 find closest point in a line
 
 ```sql
@@ -79,6 +94,12 @@ FROM (SELECT 'POINT(100 100)'::geometry As pt,
 | cp\_pt\_line | cp\_line\_pt |
 | :--- | :--- |
 | POINT\(100 100\) | POINT\(73.0769230769231 115.384615384615\)\` |
+
+Empty line
+
+```text
+ST_GeomFromText('POLYGON EMPTY')
+```
 
 -- Mark a point as WGS 84 long lat --
 
@@ -112,4 +133,54 @@ FROM (SELECT ST_GeomFromText('LINESTRING(1 2, 4 5, 6 7)') As the_line) As foo;
 ```
 
 `st_astext POINT(3 4)`
+
+## Python interface
+
+```sql
+import psycopg2
+
+def conn_pg():
+    conn = psycopg2.connect(database='my_db', 
+                            user='postgres', 
+                            password = 'mySecrete')
+
+    cur = conn.cursor()
+    return conn, cur
+ 
+if __name__ == "__main__":
+    conn, cur = conn_pg()
+    cur.execute('''CREATE TABLE COMPANY
+      (ID INT PRIMARY KEY     NOT NULL,
+      NAME           TEXT    NOT NULL,
+      AGE            INT     NOT NULL,
+      ADDRESS        CHAR(50),
+      SALARY         REAL);''')
+    print("Table created successfully")
+
+    cur.execute("INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY) \
+        VALUES (1, 'Paul', 32, 'California', 20000.00 )")
+
+    cur.execute("INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY) \
+        VALUES (2, 'Allen', 25, 'Texas', 15000.00 )")
+
+    cur.execute("INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY) \
+        VALUES (3, 'Teddy', 23, 'Norway', 20000.00 )")
+
+    cur.execute("INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY) \
+        VALUES (4, 'Mark', 25, 'Rich-Mond ', 65000.00 )")
+        
+    conn.commit()
+
+    cur.execute("SELECT id, name, address, salary  from COMPANY")
+    rows = cur.fetchall()
+    print(rows)
+
+    cur.execute("UPDATE COMPANY set SALARY = 25000.00 where ID = 1")
+    conn.commit()
+    
+    cur.execute("DELETE from COMPANY where ID=2;")
+    conn.commit()
+
+    conn.close()
+```
 
