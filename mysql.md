@@ -17,6 +17,13 @@ Once you are logged in to mysql, grant privileges to the user test \(remember to
 
 `sql> EXECUTE sp_set_database_firewall_rule N'My Firewall Rule', '40.78.7.138', '40.78.7.138';`
 
+```text
+sql> CREATE USER ApplicationUser WITH PASSWORD = 'YourStrongPassword1';
+sql> ALTER ROLE db_datareader ADD MEMBER ApplicationUser;
+sql> ALTER ROLE db_datawriter ADD MEMBER ApplicationUser;
+sql> DENY SELECT ON SalesLT.Address TO ApplicationUser;
+```
+
 ## login
 
 `mysql -u <username> -p`
