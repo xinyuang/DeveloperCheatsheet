@@ -36,6 +36,53 @@ start_time_stamp = mktime(absTime)
 end_date = datetime.fromtimestamp(start_time_stamp + ttl_time).strftime("%Y-%m-%d:%H:%M:%S")
 ```
 
+## Arguments
+
+```python
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument("-v", "--verbose", help="increase output verbosity",
+                    action="store_true")
+parser.add_argument("pos", type=int,
+                    help="position number")
+parser.add_argument("--square", type=int,
+                    help="display a square of a given number")
+parser.add_argument("--filename", type=str,
+                    help="input file name")
+
+args = parser.parse_args()
+if args.verbose:
+    print("verbosity turned on")
+
+if __name__  == "__main__":
+    print(args.square)
+    print(args.verbose)
+    print(args.pos)
+    print(args.filename)
+```
+
+```bash
+$ python oa.py --square 33 4 --filename test
+33
+False
+4
+test
+
+
+$ python oa.py -h
+usage: oa.py [-h] [-v] [--square SQUARE] [--filename FILENAME] pos
+
+positional arguments:
+  pos                  position number
+
+optional arguments:
+  -h, --help           show this help message and exit
+  -v, --verbose        increase output verbosity
+  --square SQUARE      display a square of a given number
+  --filename FILENAME  input file name
+```
+
 ## Decorator 
 
 ```python
@@ -423,5 +470,47 @@ In general, I recommend that you write pure functions whenever it is reasonable 
 
 ```python
 assert valid_time(t1) and valid_time(t2)
+```
+
+## magic variables
+
+\*args is used to send a **non-keyworded** variable length argument list to the function 
+
+\*\*kwargs allows you to pass **keyworded** variable length of arguments to a function. 
+
+```python
+def test_var_args(f_arg,*args,**kwargs):
+    print(f_arg)
+    for argv in args:
+        print("arg value ", argv)
+    for k,v in kwargs.items():
+        print("{0} = {1}".format(k, v))
+    print("-------")
+    
+pos_arg = "fixed arg"
+list_args = ['A','B','C']
+kv_args = {'1':'a','2':'b','3':'c'}
+test_var_args(pos_arg,*list_args,**kv_args)
+test_var_args(pos_arg,'T','R','T','R',k1=2,k2=3,k4=5)
+```
+
+```bash
+>>  fixed arg
+    arg value  A
+    arg value  B
+    arg value  C
+    1 = a
+    2 = b
+    3 = c
+    -------
+    fixed arg
+    arg value  T
+    arg value  R
+    arg value  T
+    arg value  R
+    k1 = 2
+    k2 = 3
+    k4 = 5
+    -------
 ```
 

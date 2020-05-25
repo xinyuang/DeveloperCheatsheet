@@ -60,6 +60,8 @@ CONNECTION LIMIT = -1;
    ALTER TABLE playground ADD last_maint date;
    ALTER TABLE playground DROP last_maint;
    ALTER TABLE locations ADD COLUMN geom geometry(PointZ,4326);
+   ALTER TABLE table_name
+   ALTER COLUMN column_name TYPE new_data_type;
    ```
 
 5. update table
