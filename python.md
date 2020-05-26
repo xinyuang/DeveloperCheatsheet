@@ -32,6 +32,7 @@ myenv/bin/activate
 import time
 from time import mktime
 from datetime import datetime,timedelta
+import pytz
 
 # convert time string to time obj
 absTime = time.strptime(start_time,'%Y-%m-%d-%H-%M-%S')  
@@ -40,8 +41,9 @@ start_time_stamp = mktime(absTime)
 end_date = datetime.fromtimestamp(start_time_stamp + ttl_time).strftime("%Y-%m-%d:%H:%M:%S")
 
 # convert current time to specific timezone
-cur_time = cur_time.astimezone(pytz.timezone("US/Pacific"))
-print(cur_time)
+x = datetime.now()
+x = x.astimezone(pytz.timezone("US/Pacific"))
+print(x, x.year,x.month,x.day,x.hour,x.minute,x.second)
 ```
 
 ## Arguments
