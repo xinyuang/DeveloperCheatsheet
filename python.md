@@ -44,6 +44,8 @@ end_date = datetime.fromtimestamp(start_time_stamp + ttl_time).strftime("%Y-%m-%
 x = datetime.now()
 x = x.astimezone(pytz.timezone("US/Pacific"))
 print(x, x.year,x.month,x.day,x.hour,x.minute,x.second)
+
+datetime_object = datetime.strptime('Jun 1 2005  1:33PM', '%b %d %Y %I:%M%p')
 ```
 
 ## Arguments
