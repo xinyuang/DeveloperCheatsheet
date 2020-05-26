@@ -60,6 +60,8 @@ CONNECTION LIMIT = -1;
    ALTER TABLE playground ADD last_maint date;
    ALTER TABLE playground DROP last_maint;
    ALTER TABLE locations ADD COLUMN geom geometry(PointZ,4326);
+   ALTER TABLE table_name
+   ALTER COLUMN column_name TYPE new_data_type;
    ```
 
 5. update table
@@ -183,4 +185,8 @@ if __name__ == "__main__":
 
     conn.close()
 ```
+
+Partition
+
+[https://www.postgresql.org/docs/10/ddl-partitioning.html](https://www.postgresql.org/docs/10/ddl-partitioning.html)
 
