@@ -16,6 +16,7 @@ import os
 load_detenv()
 database = os.getenv('DATABASE')
 print(database)
+
 ```
 
 ## Virtual Environment
