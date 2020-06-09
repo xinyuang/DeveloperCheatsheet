@@ -13,6 +13,11 @@
 `use test`  
 `delete test`
 
+```python
+nano /etc/mongod.conf
+systemctl restart mongod
+```
+
 ## manage user
 
 `db.createUser(    
@@ -25,6 +30,10 @@ roles: [ { role: "readWrite", db: "test" },
 )`
 
 from pymongo import MongoClient
+
+```python
+db.grantRolesToUser( "username", [ "dbAdmin" ])
+```
 
 ## client = MongoClient\('localhost', 27017\)
 
