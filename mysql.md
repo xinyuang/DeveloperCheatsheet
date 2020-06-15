@@ -84,15 +84,41 @@ edit SQL inquiry: `ed`
 execute last SQL inquiry: `/`  
 add alias to sal_12:  
 \`select empno,ename, deptno, sal,sal_12 annlsal from emp order by deptno, annlsal desc;`inquiry interval:`select  _from emp where sal between 1000 and 2000;```SELECT users.name AS user, products.name AS favorite FROM users INNER JOIN products ON users.fav = products.id``  
-`UPDATE customers SET address = %s WHERE address = %s`  
-\`  
-select_   
-from  
-tableA a  
-inner join  
-tableB b  
-on a.common = b.common  
-inner join  
-TableC c  
-on b.common = c.common\`
+`UPDATE customers SET address = %s WHERE address = %s`_  
+
+
+_Inner join table_
+
+```sql
+select from tableA a inner join tableB b on a.common = b.common inner join 
+TableC c on b.common = c.common
+```
+
+Create procedure
+
+```sql
+mysql> delimiter //
+
+mysql> CREATE PROCEDURE citycount (IN country CHAR(3), OUT cities INT)
+       BEGIN
+         SELECT COUNT(*) INTO cities FROM world.city
+         WHERE CountryCode = country;
+       END//
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> delimiter ;
+
+mysql> CALL citycount('JPN', @cities); -- cities in Japan
+Query OK, 1 row affected (0.00 sec)
+
+mysql> SELECT @cities;
++---------+
+| @cities |
++---------+
+|     248 |
++---------+
+1 row in set (0.00 sec)
+```
+
+
 
